@@ -4,7 +4,6 @@ export const ButtonWrap = styled.div`
   display: flex;
   justify-content: left;
   gap: 10px;
-  margin-bottom: 24px;
 `;
 
 export const Button = styled.button`
@@ -12,6 +11,7 @@ export const Button = styled.button`
   padding: 8px;
   border: 1px solid #000000;
   border-radius: 4px;
+  text-transform: capitalize;
 
   &:hover,
   &:focus {

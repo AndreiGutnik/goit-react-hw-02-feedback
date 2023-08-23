@@ -7,7 +7,7 @@ export function FeedbackOptions({ options, onLeaveFeedback }) {
       {options.map(option => {
         return (
           <Button key={option} onClick={() => onLeaveFeedback(option)}>
-            {option[0].toUpperCase() + option.substring(1)}
+            {option}
           </Button>
         );
       })}

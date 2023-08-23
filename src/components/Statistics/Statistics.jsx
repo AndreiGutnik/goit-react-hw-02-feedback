@@ -4,10 +4,10 @@ import { StatisticsItem, StatisticsList } from './statistics.styled';
 export function Statistics({ state, total, positiveFeedback }) {
   return (
     <StatisticsList>
-      {Object.keys(state).map(el => {
+      {Object.entries(state).map(([key, value]) => {
         return (
-          <StatisticsItem key={el}>
-            {el[0].toUpperCase() + el.substring(1)}: {state[el]}
+          <StatisticsItem key={key}>
+            {key}: {value}
           </StatisticsItem>
         );
       })}

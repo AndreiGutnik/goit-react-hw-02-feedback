@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Layout = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  gap: 24px; */
-  width: 824px;
+  width: 424px;
   margin: 24px auto;
-  padding: 0 12px;
+  padding: 12px;
+  border: 1px solid #000000;
+  border-radius: 12px;
+  box-shadow: 3px 3px 10px black;
 `;
