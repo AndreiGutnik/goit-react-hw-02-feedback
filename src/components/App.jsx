@@ -17,7 +17,6 @@ export class App extends Component {
     this.setState(prevstate => ({
       [value]: prevstate[value] + 1,
     }));
-    this.countTotalFeedback();
   };
 
   countTotalFeedback = () => {
@@ -28,10 +27,11 @@ export class App extends Component {
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     const total = this.countTotalFeedback();
-    return total > 0 ? Math.round((good * 100) / total) : 0;
+    return Math.round((good * 100) / total) || 0;
   };
 
   render() {
+    const total = this.countTotalFeedback();
     return (
       <Layout>
         <Section title="Please leave Feedback">
@@ -41,10 +41,10 @@ export class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          {this.countTotalFeedback() ? (
+          {total ? (
             <Statistics
               state={this.state}
-              total={this.countTotalFeedback()}
+              total={total}
               positiveFeedback={this.countPositiveFeedbackPercentage()}
             />
           ) : (
